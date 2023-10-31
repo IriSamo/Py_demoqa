@@ -40,6 +40,6 @@ jobs:
         hide-comment: false
         report-only-changed-files: false
         remove-link-from-badge: false
-        unique-id-for-comment: python3.8
+        unique-id-for-comment: python3.10
         junitxml-path: ./pytest.xml
         junitxml-title: My JUnit Xml Summary Title
