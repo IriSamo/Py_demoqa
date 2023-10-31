@@ -27,7 +27,7 @@ jobs:
       uses: MishaKav/pytest-coverage-comment@main
       with:
         pytest-coverage-path: /path-to-file/pytest-coverage.txt
-        pytest-xml-coverage-path: /path-to-file/coverage.xml
+        pytest-xml-coverage-path: ./path-to-file/coverage.xml
         title: My Coverage Report Title
         badge-title: My Badge Coverage Title
         hide-badge: false
