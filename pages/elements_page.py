@@ -1,4 +1,5 @@
 import random
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -31,6 +32,7 @@ class TextBoxPage(BasePage):
         permanent_address = self.element_is_present(self.locators.CREATED_PERMANENT_ADDRESS).text.split(':')[1]
         return full_name, email, current_address, permanent_address
 
+
 class CheckBoxPage(BasePage):
     locators = CheckBoxPageLocators()
 
@@ -38,8 +40,8 @@ class CheckBoxPage(BasePage):
         self.element_is_visible(self.locators.EXPEND_ALL_BUTTON).click()
 
     def check_random_checkboxes(self):
-        checkbox_list = self.elements_are_visible(self.locators.CHECKBOX_LIST)
-        count = 5
+        checkbox_list = self.elements_are_present(self.locators.CHECKBOX_LIST)
+        count = 7
         while count != 0:
             item = checkbox_list[random.randint(1, 15)]
             if count > 0:
@@ -58,6 +60,7 @@ class CheckBoxPage(BasePage):
         return str(data).replace(' ', '').replace('.doc', '').lower()
 
     def get_output_results(self):
+        self.go_to_element(self.element_is_present(self.locators.RESULT))
         output_results = self.elements_are_present(self.locators.OUTPUT_RESULTS)
         output_data = []
         for i in output_results:

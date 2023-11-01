@@ -15,6 +15,7 @@ class TestTextBox:
         assert current_address == output_current_address
         assert permanent_address == output_permanent_address
 
+
 class TestCheckBox:
 
     def test_check_box(self, driver):
@@ -24,7 +25,4 @@ class TestCheckBox:
         check_box_page.check_random_checkboxes()
         input_checkboxes = check_box_page.get_checked_checkboxes()
         output_results = check_box_page.get_output_results()
-        print()
-        print(input_checkboxes)
-        print(output_results)
         assert input_checkboxes == output_results
