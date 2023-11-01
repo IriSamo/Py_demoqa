@@ -1,4 +1,5 @@
 from pages.elements_page import TextBoxPage
+from pages.elements_page import CheckBoxPage
 
 
 class TestTextBox:
@@ -13,3 +14,17 @@ class TestTextBox:
         assert email == output_email
         assert current_address == output_current_address
         assert permanent_address == output_permanent_address
+
+class TestCheckBox:
+
+    def test_check_box(self, driver):
+        check_box_page = CheckBoxPage(driver, 'https://demoqa.com/checkbox')
+        check_box_page.open()
+        check_box_page.expand_all_checkboxes()
+        check_box_page.check_random_checkboxes()
+        input_checkboxes = check_box_page.get_checked_checkboxes()
+        output_results = check_box_page.get_output_results()
+        print()
+        print(input_checkboxes)
+        print(output_results)
+        assert input_checkboxes == output_results
