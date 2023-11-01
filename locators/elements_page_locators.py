@@ -13,9 +13,11 @@ class TextBoxPageLocators:
     CREATED_CURRENT_ADDRESS = (By.XPATH, '//p[@id = "currentAddress"]')
     CREATED_PERMANENT_ADDRESS = (By.XPATH, '//p[@id = "permanentAddress"]')
 
+
 class CheckBoxPageLocators:
     EXPEND_ALL_BUTTON = (By.XPATH, '//button[@title="Expand all"]')
-    CHECKBOX_LIST = (By.XPATH, '//span[@class="rct-text"]')
+    CHECKBOX_LIST = (By.CLASS_NAME, 'rct-checkbox')
     CHECKED_CHECKBOXES = (By.XPATH, '//*[@class="rct-icon rct-icon-check"]')
     TITLE_CHECKBOX = './../following-sibling::span[@class="rct-title"]'
-    OUTPUT_RESULTS  = (By.XPATH, '//span[@class="text-success"]')
+    RESULT = (By.ID, 'result')
+    OUTPUT_RESULTS = (By.CSS_SELECTOR, 'span.text-success')
