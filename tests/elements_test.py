@@ -1,4 +1,5 @@
 from pages.elements_page import TextBoxPage
+from pages.elements_page import CheckBoxPage
 
 
 class TestTextBox:
