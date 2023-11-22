@@ -36,3 +36,29 @@ class TestRadioButton:
         radio_button_page.click_yes_radio_button()
         text = radio_button_page.get_selected_radio_button()
         assert text == 'Yes'
+
+    def test_button_yes(self, driver):
+        radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
+        radio_button_page.open()
+        radio_button_page.click_yes_button()
+        text = radio_button_page.get_selected_radio_button()
+        assert text == 'Yes'
+
+    def test_radio_button_impressive(self, driver):
+        radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
+        radio_button_page.open()
+        radio_button_page.click_impressive_radio_button()
+        text = radio_button_page.get_selected_radio_button()
+        assert text == 'Impressive'
+
+    def test_radio_button_choice(self, driver):
+        radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
+        radio_button_page.open()
+        radio_button_page.click_on_the_radio_button('yes')
+        yes_selected = radio_button_page.get_selected_radio_button()
+        radio_button_page.click_on_the_radio_button('impressive')
+        impressive_selected = radio_button_page.get_selected_radio_button()
+        radio_button_page.click_on_the_radio_button('no')
+        no_selected = radio_button_page.get_selected_radio_button()
+        assert yes_selected == 'Yes'
+        assert impressive_selected == 'Impressive'
