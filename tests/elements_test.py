@@ -1,5 +1,6 @@
 from pages.elements_page import TextBoxPage
 from pages.elements_page import CheckBoxPage
+from pages.elements_page import RadioButtonPage
 
 
 class TestTextBox:
@@ -9,7 +10,6 @@ class TestTextBox:
         text_box_page.open()
         full_name, email, current_address, permanent_address = text_box_page.fill_all_fields()
         output_full_name, output_email, output_current_address, output_permanent_address = text_box_page.check_filled_form()
-
         assert full_name == output_full_name
         assert email == output_email
         assert current_address == output_current_address
@@ -26,3 +26,13 @@ class TestCheckBox:
         input_checkboxes = check_box_page.get_checked_checkboxes()
         output_results = check_box_page.get_output_results()
         assert input_checkboxes == output_results
+
+
+class TestRadioButton:
+
+    def test_radio_button_yes(self, driver):
+        radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
+        radio_button_page.open()
+        radio_button_page.click_yes_radio_button()
+        text = radio_button_page.get_selected_radio_button()
+        assert text == 'Yes'
