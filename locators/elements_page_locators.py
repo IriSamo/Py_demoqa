@@ -21,3 +21,11 @@ class CheckBoxPageLocators:
     TITLE_CHECKBOX = './../following-sibling::span[@class="rct-title"]'
     RESULT = (By.ID, 'result')
     OUTPUT_RESULTS = (By.CSS_SELECTOR, 'span.text-success')
+
+
+class RadioButtonPageLocators:
+    YES_RADIO_BUTTON = (By.ID, 'yesRadio')
+    YES_BUTTON = (By.XPATH, '//input[@id="yesRadio"]/following-sibling::label')
+    IMPRESSIVE_RADIO_BUTTON = (By.ID, 'impressiveRadio')
+    SELECTED_RADIO_BUTTON = (By.CLASS_NAME, 'text-success')
+    NO_RADIO_BUTTON = (By.ID, 'noRadio')
